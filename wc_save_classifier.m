@@ -6,8 +6,16 @@ function wc_save_classifier(src, dst, type_feature, type)
     
     if nargin < 3
         type_feature = 'smr';
+        type = 'cnbi-gaussian';
     end
-
+    
+    if nargin < 2
+        type_feature = 'smr';
+        type = 'cnbi-gaussian';
+        [path, name] = fileparts(src);
+        dst = fullfile(path, [name '.dat']);
+    end
+    
     if ischar(src) 
         srcst = load(src);
     elseif isstruct(src)
