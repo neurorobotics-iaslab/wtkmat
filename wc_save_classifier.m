@@ -1,4 +1,5 @@
 function wc_save_classifier(src, dst, type_feature, type)
+% WC_SAVE_CLASSIFIER(src [, dst][, type_feature][, type])
 
     if nargin < 4
         type = 'cnbi-gaussian';

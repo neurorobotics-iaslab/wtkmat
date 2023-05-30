@@ -6,6 +6,11 @@ function wc_save_laplacian(src, dst)
     type     = 'laplacian';
     label    = '';
     
+    if nargin < 2
+        [path, name] = fileparts(src);
+        dst = fullfile(path, [name '.dat']);
+    end
+
     lapdata = load(src);
     
     fid = fopen(dst, 'w');
